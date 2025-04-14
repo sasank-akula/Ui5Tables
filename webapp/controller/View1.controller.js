@@ -1,6 +1,7 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], (Controller) => {
+    "sap/ui/core/mvc/Controller",
+    "sap/m/MessageToast"
+], (Controller,MessageToast) => {
     "use strict";
 
     return Controller.extend("com.sap.demo.controller.View1", {
@@ -33,24 +34,12 @@ sap.ui.define([
             oModel.setData(oData);
             this.getView().setModel(oModel);
             console.log("Products:", oModel.getProperty("/Data/Products"));
-        },
-        formatFullName:function(firstname,lastname){
-
-            return "Hi "+firstname+" "+ lastname;
         }
         ,formatPrice:function(val){
                 return val+" /Unit";
-        },
-        formatQuantity:function(val){
-            if(val>1){
-                return val+" units"
-            }
-            else if(val==1){
-                return val+" unit"
-            }
-            else{
-                return "Out of stock";
-            }
         }
+       ,onDelete:function(){
+        MessageToast.show("Record deleted")
+       }
     });
 });

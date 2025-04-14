@@ -35,5 +35,8 @@ An SAP Fiori application.
 
 <br>
 <h2>Expression binding</h2>
+<h2>added formmater binding</h2>
+<h2>Added formatter.js binding</h2>
+
 
 
