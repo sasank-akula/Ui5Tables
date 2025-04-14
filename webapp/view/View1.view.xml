@@ -8,8 +8,8 @@
                 <Button id="_IDGenButton1"  icon="sap-icon://menu2"/>
                 <ToolbarSpacer id="_IDGenToolbarSpacer1" />
                 <Text id="_IDGenText" text="Product Details"/>
-                <ToolbarSpacer id="_IDGenToolbarSpacer2"/>
-                <Text id="_IDGenText1" text="{= 'Hi, '+${/firstname}+' '+${/lastname}}"/>
+                <ToolbarSpacer id="_IDGenToolbarSpacer2"/>  
+                <Text id="_IDGenText1" text="{parts:[{path:'/firstname'},{path:'/lastname'}],formatter:'.formatFullName'}"/>
             </tnt:ToolHeader>
 
             <Table id="_IDGenTable" items="{/Data/Products}">
@@ -32,8 +32,8 @@
                     <ColumnListItem id="_IDGenColumnListItem1">
                         <cells>
                             <Text id="_IDGenText5" text="{name}"/>
-                            <Text id="_IDGenText6" text="{quantity}"/>
-                            <Text id="_IDGenText7" text="{price}"/>
+                            <Text id="_IDGenText6" text="{path:'quantity' ,formatter:'.formatQuantity'}"/>
+                            <Text id="_IDGenText7" text="{path:'price' ,formatter:'.formatPrice'}"/>
                             <Text id="_IDGenText9" text="{=(${quantity}*${price}+' $')}"/>
                         </cells>
                     </ColumnListItem>

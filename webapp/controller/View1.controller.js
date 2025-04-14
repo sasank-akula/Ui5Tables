@@ -17,7 +17,7 @@ sap.ui.define([
                         },
                         {
                             name:"Rice",
-                            quantity:60,
+                            quantity:0,
                             price:50
                         },
                         {
@@ -33,6 +33,24 @@ sap.ui.define([
             oModel.setData(oData);
             this.getView().setModel(oModel);
             console.log("Products:", oModel.getProperty("/Data/Products"));
+        },
+        formatFullName:function(firstname,lastname){
+
+            return "Hi "+firstname+" "+ lastname;
+        }
+        ,formatPrice:function(val){
+                return val+" /Unit";
+        },
+        formatQuantity:function(val){
+            if(val>1){
+                return val+" units"
+            }
+            else if(val==1){
+                return val+" unit"
+            }
+            else{
+                return "Out of stock";
+            }
         }
     });
 });
