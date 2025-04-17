@@ -22,7 +22,8 @@
                 />
                 <ToolbarSpacer id="_IDGenToolbarSpacer2" />
                 <Text
-                    id="_IDGenText1"   core:require="{
+                    id="_IDGenText1"
+                    core:require="{
                     Formatter: 'com/sap/demo/model/formatter'}"
                     text="{parts:[{path:'/firstname'},{path:'/lastname'}],formatter:'Formatter.formatFullName'}"
                 />
@@ -35,7 +36,6 @@
                 delete=".onDelete"
                 growingThreshold="1"
                 growingScrollToLoad="true"
-                
             >
                 <columns>
                     <Column id="_IDGenColumn1">
@@ -70,7 +70,7 @@
                             <Text
                                 id="_IDGenText8"
                                 text="TotalPrice"
-                                textAlign="Center"
+                                textAlign="Right"
                             />
                         </header>
                     </Column>
@@ -83,11 +83,12 @@
                                 id="_IDGenText5"
                                 text="{name}"
                             />
-                            <Text
-                              core:require="{
+                            <ObjectStatus
+                                id="_IDGenObjectStatus"
+                                core:require="{
                                 Formatter: 'com/sap/demo/model/formatter'}"
-                                id="_IDGenText6"
                                 text="{path:'quantity' ,formatter:'Formatter.formatQuantity'}"
+                                state="{= ${quantity} > 10 ? 'Success' : 'Error' }"
                             />
                             <Text
                                 id="_IDGenText7"

@@ -77,7 +77,7 @@
           "name": "RouteView1",
           "pattern": ":?query:",
           "target": [
-            "TargetView1"
+            "TargetView2"
           ]
         }
       ],
@@ -85,6 +85,10 @@
         "TargetView1": {
           "id": "View1",
           "name": "View1"
+        },
+        "TargetView2": {
+          "id": "View2",
+          "name": "View2"
         }
       }
     },
