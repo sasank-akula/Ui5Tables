@@ -37,6 +37,26 @@ sap.ui.define([
                 }
             }
 
+            const url="https://services.odata.org/northwind/northwind.svc/Products/?$format=json"
+            $.ajax({
+                url:url,
+                type:"GET",
+                headers:{
+                    "Content-Type":"application/json"
+                },
+                success:function(req){
+                    console.log(req.data);
+                },
+                error:function(error){
+                    console.error(error);
+                    
+                }
+                
+                
+
+            })
+
+
             let oModel = new sap.ui.model.json.JSONModel();
             oModel.setData(oData);
             this.getView().setModel(oModel);
@@ -79,6 +99,9 @@ sap.ui.define([
                 aSorters.push(new sap.ui.model.Sorter(sSortKey, oDirection==="sap-icon://sort-descending"));
             }
             oBinding.sort(aSorters);
+            if(oFilter.length>0){
+                oBinding.filter(aFilter);
+            }
         },
         formatPrice: function (val) {
             return val + " /Unit";
