@@ -15,6 +15,15 @@ server:
             - /resources
             - /test-resources
           url: https://ui5.sap.com
+        backend:
+          - url: https://services.odata.org/
+            authenticationType: NoAuthentication
+            destination: NORTHWINDservice
+            path: /v2
+          - url: https://45dd378ctrial-userproject-s43yg8sj-dev-grocery-srv.cfapps.us10-001.hana.ondemand.com/
+            authenticationType: NoAuthentication
+            destination: CAPMService
+            path: /odata
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
